@@ -1,27 +1,18 @@
 package stack;
 
-/**
- * This class represents stack of Integers via Array.
- * Operations :-
- * 1. Push
- * 2. Pop
- * 3. Size
- * 4. Peek
- * 5. isEmpty
- * 6. isFull
- * 7. capacity
- */
-public class Stack {
+import dto.StackDto;
 
-    private int []stack;
+public class StackO1 {
+
+    private StackDto[]stack;
     private int top = -1;
 
     /**
      * @param capacity
      * Initialization of the stack
      */
-    public Stack(int capacity) {
-        this.stack = new int[capacity];
+    public StackO1(int capacity) {
+        this.stack = new StackDto[capacity];
     }
 
 
@@ -30,24 +21,35 @@ public class Stack {
      * Push a element in stack
      */
     public void push(int data) {
+        int min = 0;
+        int max = 0;
         if(this.top == this.stack.length - 1) {
             System.out.print("\tStack is full.");
             return;
         }
+        if(this.isEmpty()) {
+            min = data;
+            max = data;
+        } else {
+            StackDto peek = this.peek();
+            min = peek.getMin() <= data ? peek.getMin() : data;
+            max = peek.getMax() >= data ? peek.getMax() : data;
+        }
+
         this.top += 1;
-        this.stack[this.top] = data;
+        this.stack[this.top] = new StackDto(min,max,data);
     }
 
     /**
      * @return
      * Pop data from stack
      */
-    public int pop() {
+    public StackDto pop() {
         if(this.isEmpty()) {
             System.out.print("Stack is empty");
-            return -1;
+            return null;
         }
-        int data = this.stack[this.top];
+        StackDto data = this.stack[this.top];
         this.top -= 1;
         return data;
     }
@@ -56,10 +58,10 @@ public class Stack {
      * @return
      * Similar to pop operation but difference is that top element will not be deleted.
      */
-    public int peek() {
+    public StackDto peek() {
         if(this.isEmpty()) {
             System.out.print("Stack is empty");
-            return -1;
+            return null;
         }
         return this.stack[this.top];
     }
@@ -88,26 +90,57 @@ public class Stack {
         return this.top + 1;
     }
 
+    /**
+     * @return
+     * Returns the capacity of the stack
+     */
     public int capacity() {
         return this.stack.length;
     }
 
+    /**
+     * Traverse the stack
+     */
     public void traverse() {
         if(this.isEmpty()) {
             System.out.print("The stack is empty");
             return;
         }
         for(int i = this.top; i >= 0; i--) {
-            System.out.print("\t" + this.stack[i] + "\t|");
+            System.out.print("\t" + this.stack[i].getData() + "\t|");
         }
     }
 
-    public void reverse() {
+    /**
+     * @return
+     * Return the minimum element of the stack
+     */
+    public int getMin() {
+        if(this.isEmpty()) {
+            System.out.print(" Stack is empty");
+            return -1;
+        }
+        return this.peek().getMin();
+    }
+
+    /**
+     * @return
+     * Returns the max element of the stack
+     */
+    public int getMax() {
+        if(this.isEmpty()) {
+            System.out.print(" Stack is empty");
+            return -1;
+        }
+        return this.peek().getMax();
+    }
+
+    /*public void reverse() {
 
         if(this.isEmpty())
             return;
 
-        int data = this.pop();
+        StackDto data = this.pop();
 
         reverse();
 
@@ -115,16 +148,16 @@ public class Stack {
         insertAtBottom(data);
     }
 
-    private void insertAtBottom(int data) {
+    private void insertAtBottom(StackDto data) {
 
         if(this.isEmpty()) {
             this.push(data);
             return;
         }
 
-        int d = this.pop();
+        StackDto d = this.pop();
         insertAtBottom(data);
         this.push(d);
 
-    }
+    }*/
 }
