@@ -5,7 +5,7 @@ import utils.PrecedenceOfOperator;
 import java.util.Stack;
 
 /**
- * This class will convert input infix expression fot postfix. Algo :-
+ * This class will convert input infix expression to postfix. Algo :-
  *
  * Step 1 : Input == operand -> Add it in expression
  * Step 2 : Input == (       -> Insert in stack
@@ -21,7 +21,7 @@ public class InfixToPostfix {
 
     public static void main(String[] args) {
 
-        String infixExp = Expressions.PREFIX14;
+        String infixExp = Expressions.PREFIX20;
         System.out.print("Infix : " + infixExp);
 
         String postfixExp = convertToPostfix(infixExp);
