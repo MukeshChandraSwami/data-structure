@@ -50,7 +50,7 @@ public class Expressions {
 
 
 
-    /* ************* INFIX EXPRESSIONS **************** */
+    /* ************* PREFIX EXPRESSIONS **************** */
     public static final String PREFIX1 = "+*ab-*cde";
     public static final String PREFIX2 = "+a-*bcd";
     public static final String PREFIX3 = "*+ab+cd";
@@ -71,4 +71,16 @@ public class Expressions {
     public static final String PREFIX18 = "+*+abc-/d+e*fgh";
     public static final String PREFIX19 = "+a*bc";
     public static final String PREFIX20 = "+k-l+*mn+*^op/w/u*vtq";
+
+    /* ***************************** EXPRESSIONS FOR EVALUATIONS ******************************** */
+
+    /* ************* POSTFIX EXPRESSIONS **************** */
+    public static final String POSTFIX_EVAL1 = "231*+9-";
+    public static final String POSTFIX_EVAL2 = "453*+45*+";
+
+    /* ************* PREFIX EXPRESSIONS **************** */
+    public static final String PREFIX_EVAL1 = "++4*53*45";
+
+    /* ************* INFIX EXPRESSIONS **************** */
+    public static final String INFIX_EVAL1 = "4+5*3+4*5";
 }

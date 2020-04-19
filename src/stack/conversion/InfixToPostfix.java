@@ -1,6 +1,6 @@
 package stack.conversion;
 
-import utils.PrecedenceOfOperator;
+import utils.DSUtils;
 
 import java.util.Stack;
 
@@ -49,10 +49,10 @@ public class InfixToPostfix {
                 }
             } else {
                 if(!s.isEmpty()) {
-                    if (PrecedenceOfOperator.precedence(s.peek()) >= PrecedenceOfOperator.precedence(ch)) {        // If top operator has higher precedence
+                    if (DSUtils.precedence(s.peek()) >= DSUtils.precedence(ch)) {        // If top operator has higher precedence
                         while (!s.isEmpty() &&
                                 s.peek() != '(' &&
-                                PrecedenceOfOperator.precedence(s.peek()) >= PrecedenceOfOperator.precedence(ch)) {      // Loop until and add in expression
+                                DSUtils.precedence(s.peek()) >= DSUtils.precedence(ch)) {      // Loop until and add in expression
                             postfix += s.pop();
                         }
                     }
