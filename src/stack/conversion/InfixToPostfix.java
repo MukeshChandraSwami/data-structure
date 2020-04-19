@@ -21,7 +21,7 @@ public class InfixToPostfix {
 
     public static void main(String[] args) {
 
-        String infixExp = Expressions.PREFIX20;
+        String infixExp = Expressions.INFIX1;
         System.out.print("Infix : " + infixExp);
 
         String postfixExp = convertToPostfix(infixExp);

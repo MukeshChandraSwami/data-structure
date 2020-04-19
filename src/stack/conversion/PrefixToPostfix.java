@@ -3,26 +3,25 @@ package stack.conversion;
 import java.util.Stack;
 
 /**
- * This class is responsible to covert a Prefix expression into Infix. Algo :
+ * This class is responsible to convert a Prefix expression into Postfix expression. Alog :
  * Step 1 : Scan the expression from right to left.
  * Step 2 : If input == operand     -> Push into stack
- * Step 3 : If input == operator    -> Take to element from stack A,B.
- * Step 4 : now do : A + operator + B and push back to stack
- * Step 5 : Repeat until expression is scanned completely.
+ * Step 3 : If input == operator    -> Pop two elements from stack A,B.
+ * Step 4 : Now do : A + B + operator and push back to stack
+ * Step 5 : Repeat until complete expression is done.
  */
-public class PrefixToInfix {
+public class PrefixToPostfix {
 
     public static void main(String[] args) {
-
         String prefixExp = Expressions.PREFIX1;
         System.out.print("Prefix : " + prefixExp);
 
-        String infixExp = convertToInfix(prefixExp);
+        String postfixExp = convertToPostfix(prefixExp);
 
-        System.out.print("\n\nInfix : " + infixExp);
+        System.out.print("\n\nPostfix : " + postfixExp);
     }
 
-    public static String convertToInfix(String prefixExp) {
+    public static String convertToPostfix(String prefixExp) {
 
         Stack<String> stack = new Stack<>();
         for(int i = prefixExp.length() - 1; i >= 0; i--) {
@@ -32,7 +31,7 @@ public class PrefixToInfix {
             } else {
                 String a = stack.pop();
                 String b = stack.pop();
-                String c = a + ch + b;
+                String c = a + b + ch;
                 stack.push(c);
             }
         }

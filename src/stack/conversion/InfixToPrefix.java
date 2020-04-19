@@ -12,7 +12,7 @@ public class InfixToPrefix {
 
     public static void main(String[] args) {
 
-        String infixExp = Expressions.PREFIX20;
+        String infixExp = Expressions.INFIX20;
         System.out.print("Infix : " + infixExp);
 
         String prefixExp = convertToPrefix(infixExp);
