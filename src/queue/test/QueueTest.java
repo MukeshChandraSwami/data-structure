@@ -8,21 +8,21 @@ public class QueueTest {
 
     public static void main(String[] args) {
 
-        Queue queue = new Queue(1);
+        Queue queue = new Queue(10);
 
         System.out.print("Is Empty : " + queue.isEmpty());
         System.out.print("\nIs Full : " + queue.isFull());
         System.out.print("\nSize : " + queue.getSize());
         System.out.print("\n\nInserting data in queue");
         new Random().ints(1,10)
-                .limit(0)
+                .limit(5)
                 .forEach(data -> {
                     System.out.print("\nInserting : " + data);
                     queue.enqueue(data);
                 });
 
         new Random().ints(50,100)
-                .limit(1)
+                .limit(5)
                 .forEach(data -> {
                     System.out.print("\nInserting : " + data);
                     queue.enqueue(data);
@@ -44,5 +44,14 @@ public class QueueTest {
         System.out.print("\n\nIs Empty : " + queue.isEmpty());
         System.out.print("\nIs Full : " + queue.isFull());
         System.out.print("\nSize : " + queue.getSize());
+
+        System.out.print("\n\nReversing : ");
+        queue.reverse();
+        queue.travers();
+
+        System.out.print("\n\nSorting : ");
+        queue.sort();
+        queue.travers();
+
     }
 }

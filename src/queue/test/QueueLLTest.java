@@ -1,14 +1,14 @@
 package queue.test;
 
-import queue.CircularQueue;
+import queue.QueueViaLL;
 
 import java.util.Random;
 
-public class CircularQueueTest {
+public class QueueLLTest {
 
     public static void main(String[] args) {
 
-        CircularQueue queue = new CircularQueue(10);
+        QueueViaLL queue = new QueueViaLL(10);
 
         System.out.print("Is Empty : " + queue.isEmpty());
         System.out.print("\nIs Full : " + queue.isFull());
@@ -22,7 +22,7 @@ public class CircularQueueTest {
                 });
 
         new Random().ints(50,100)
-                .limit(6)
+                .limit(5)
                 .forEach(data -> {
                     System.out.print("\nInserting : " + data);
                     queue.enqueue(data);
@@ -44,32 +44,5 @@ public class CircularQueueTest {
         System.out.print("\n\nIs Empty : " + queue.isEmpty());
         System.out.print("\nIs Full : " + queue.isFull());
         System.out.print("\nSize : " + queue.getSize());
-
-        new Random().ints(50,100)
-                .limit(3)
-                .forEach(data -> {
-                    System.out.print("\nInserting : " + data);
-                    queue.enqueue(data);
-                });
-
-        System.out.print("\n\nTraversing : ");
-        queue.travers();
-
-        System.out.print("\n\nIs Empty : " + queue.isEmpty());
-        System.out.print("\nIs Full : " + queue.isFull());
-        System.out.print("\nSize : " + queue.getSize());
-
-        queue.reverse();
-
-        System.out.print("\n\nTraversing : ");
-        queue.travers();
-
-        System.out.print("\n\nIs Empty : " + queue.isEmpty());
-        System.out.print("\nIs Full : " + queue.isFull());
-        System.out.print("\nSize : " + queue.getSize());
-
-        System.out.print("\n\nSorting : ");
-        queue.sort();
-        queue.travers();
     }
 }

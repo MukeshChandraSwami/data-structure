@@ -75,6 +75,49 @@ public class Queue {
         }
     }
 
+    public void reverse() {
+        if(this.isEmpty())
+            return;
+        int data = this.dequeue();
+        reverse();
+        this.enqueue(data);
+    }
+
+    public void sort() {
+
+        if(this.isEmpty())
+            return;
+        int data = this.dequeue();
+        sort();
+
+        sort(data);
+    }
+
+    private void sort(int data) {
+        if(this.isEmpty()) {
+            this.enqueue(data);
+            return;
+        }
+
+        Queue q = new Queue(this.capacity);
+        boolean insert = true;
+        while(!this.isEmpty()) {
+            int d = this.dequeue();
+            if(d > data && insert) {
+                q.enqueue(data);
+                insert = false;
+            }
+            q.enqueue(d);
+        }
+
+        if(insert)
+            q.enqueue(data);
+
+        while (!q.isEmpty()){
+            this.enqueue(q.dequeue());
+        }
+    }
+
     public int getFront() {
 
         if(this.isEmpty()) {
