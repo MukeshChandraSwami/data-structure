@@ -1,3 +1,4 @@
 1. Find all possible binary trees with given Inorder Traversal (https://www.geeksforgeeks.org/find-all-possible-trees-with-given-inorder-traversal/)
 2. Find post order traversal of BST from preorder traversal (https://www.geeksforgeeks.org/find-postorder-traversal-of-bst-from-preorder-traversal/)
 3. Morris traversal (https://www.geeksforgeeks.org/morris-traversal-for-preorder/)
+4. Construct Full Binary Tree using its Preorder traversal and Preorder traversal of its mirror tree(https://www.geeksforgeeks.org/construct-full-binary-tree-using-preorder-traversal-preorder-traversal-mirror-tree/)

@@ -4,11 +4,14 @@ import stack.conversion.ExpressionType;
 import tree.binary.Tree;
 import tree.binary.common.TreeNode;
 
+import java.util.LinkedList;
+
 public class DSUtils {
 
     public static final int[] IN_ORDER = {40,39,42,55,62,70,79,84,91};
     public static final int[] PRE_ORDER = {62,40,42,39,55,91,79,70,84};
     public static final int[] POST_ORDER = {39,55,42,40,70,84,79,91,62};
+    public static final int[] LEVEL_ORDER = {62,40,91,42,79,39,55,70,84};
 
     public static int precedence(char op) {
         int precedence = -1;
@@ -98,6 +101,22 @@ public class DSUtils {
         return tree;
     }
 
+    public static LinkedList<TreeNode> getLLTree() {
+
+        LinkedList<TreeNode> list = new LinkedList<>();
+        list.addLast(new TreeNode(62));
+        list.addLast(new TreeNode(40));
+        list.addLast(new TreeNode(91));
+        list.addLast(new TreeNode(42));
+        list.addLast(new TreeNode(79));
+        list.addLast(new TreeNode(39));
+        list.addLast(new TreeNode(55));
+        list.addLast(new TreeNode(70));
+        list.addLast(new TreeNode(84));
+
+        return list;
+    }
+
     /**
      * @return
      *
@@ -135,5 +154,40 @@ public class DSUtils {
         tree.getRoot().getRight().getRight().setRight(new TreeNode(22));
 
         return tree;
+    }
+
+    public static int[] reverse(int arr[]) {
+
+        for(int i = 0, j = arr.length - 1; i > j; i++,j--){
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+        return arr;
+    }
+
+    public static TreeNode getTernaryTree() {
+        // Level 0
+        TreeNode root = new TreeNode(30);
+
+        // Level 1
+        root.setLeft(new TreeNode(5));
+        root.setMiddle(new TreeNode(11));
+        root.setRight(new TreeNode(63));
+
+        // Level 2
+        root.getLeft().setLeft(new TreeNode(1));
+        root.getLeft().setMiddle(new TreeNode(4));
+        root.getLeft().setRight(new TreeNode(8));
+
+        root.getMiddle().setLeft(new TreeNode(6));
+        root.getMiddle().setMiddle(new TreeNode(7));
+        root.getMiddle().setRight(new TreeNode(15));
+
+        root.getRight().setLeft(new TreeNode(31));
+        root.getRight().setMiddle(new TreeNode(55));
+        root.getRight().setRight(new TreeNode(65));
+
+        return root;
     }
 }

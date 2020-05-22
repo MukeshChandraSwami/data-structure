@@ -67,4 +67,22 @@ public class Tree {
         postOrder(start.getRight());
         System.out.print("\t" + start.getData() + "\t|");
     }
+
+    public void levelOrder(TreeNode start) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(start);
+
+        while(!queue.isEmpty()) {
+
+            TreeNode node = queue.remove();
+
+            System.out.print("\t" + node.getData() + "\t|");
+
+            if(node.getLeft() != null)
+                queue.add(node.getLeft());
+
+            if(node.getRight() != null)
+                queue.add(node.getRight());
+        }
+    }
 }

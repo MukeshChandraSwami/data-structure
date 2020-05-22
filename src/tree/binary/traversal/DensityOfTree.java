@@ -21,7 +21,7 @@ public class DensityOfTree {
         System.out.print("\n\nDensity : " + (float)(size / height));
     }
 
-    private static int getHeightAndSize(TreeNode node) {
+    public static int getHeightAndSize(TreeNode node) {
 
         if(node == null)
             return 0;

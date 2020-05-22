@@ -53,7 +53,7 @@ public class LRU {
                     }
                     index++;
                 }
-                ((LinkedList<Integer>) queue).remove(index);
+                queue.remove(index);
                 HIT_AND_MISS.put(HIT,HIT_AND_MISS.get(HIT) + 1);
             }
 

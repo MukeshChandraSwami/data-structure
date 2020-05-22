@@ -6,10 +6,11 @@ public class TreeNode {
     private TreeNode left;
     private TreeNode right;
     private TreeNode next;
+    private TreeNode middle;
 
     public TreeNode(int data) {
         this.data = data;
-        this.left = this.right = this.next = null;
+        this.left = this.right = this.next = this.middle = null;
     }
 
     public int getData() {
@@ -44,6 +45,14 @@ public class TreeNode {
 
     public void setNext(TreeNode next) {
         this.next = next;
+    }
+
+    public TreeNode getMiddle() {
+        return middle;
+    }
+
+    public void setMiddle(TreeNode middle) {
+        this.middle = middle;
     }
 
     @Override
