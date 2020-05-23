@@ -101,6 +101,42 @@ public class DSUtils {
         return tree;
     }
 
+    /**
+     * @return
+     * In-order :
+     * Pre-order :
+     * Post-order :
+     * Level-order :
+     *
+     *                           2
+     *                       /       \
+     *                     /          \
+     *                   4             8
+     *                    \           /
+     *                    16        11
+     *                   /  \      /  \
+     *                  6    5    12   9
+     *
+     */
+    public static Tree getTreeWithSmallNumbers() {
+        Tree tree = new Tree(2);
+        // Setting left sub tree
+        tree.getRoot().setLeft(new TreeNode(4));
+        tree.getRoot().getLeft().setRight(new TreeNode(16));
+        tree.getRoot().getLeft().getRight().setLeft(new TreeNode(6));
+        tree.getRoot().getLeft().getRight().setRight(new TreeNode(5));
+
+        // Setting right sub tree.
+        tree.getRoot().setRight(new TreeNode(8));
+        tree.getRoot().getRight().setLeft(new TreeNode(11));
+        tree.getRoot().getRight().getLeft().setLeft(new TreeNode(12));
+        tree.getRoot().getRight().getLeft().setRight(new TreeNode(9));
+
+        return tree;
+    }
+
+
+
     public static LinkedList<TreeNode> getLLTree() {
 
         LinkedList<TreeNode> list = new LinkedList<>();
