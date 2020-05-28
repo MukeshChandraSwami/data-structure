@@ -12,7 +12,7 @@ public class ConvertBTInDLLInSpiralForm {
 
     public static void main(String[] args) {
 
-        TreeNode root = DSUtils.getPerfectBinaryTree().getRoot();
+        TreeNode root = DSUtils.getPerfectBinaryTree3Levels().getRoot();
         System.out.print("Level order : ");
         LevelOrderTraversal.levelOrderTraversal(root);
         Queue<Integer> spiralQueue = getSpiralDLL(root);

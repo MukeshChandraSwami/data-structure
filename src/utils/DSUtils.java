@@ -169,7 +169,7 @@ public class DSUtils {
      *
      */
 
-    public static Tree getPerfectBinaryTree() {
+    public static Tree getPerfectBinaryTree3Levels() {
         Tree tree = new Tree(62);
         // Setting left sub tree
         tree.getRoot().setLeft(new TreeNode(40));
@@ -191,6 +191,36 @@ public class DSUtils {
 
         return tree;
     }
+
+
+    public static Tree getPerfectBinaryTree2Levels() {
+        Tree tree = new Tree(10);
+
+        tree.getRoot().setLeft(new TreeNode(8));
+        tree.getRoot().getLeft().setLeft(new TreeNode(3));
+        tree.getRoot().getLeft().setRight(new TreeNode(5));
+
+        tree.getRoot().setRight(new TreeNode(2));
+        tree.getRoot().getRight().setLeft(new TreeNode(2));
+        tree.getRoot().getRight().setRight(new TreeNode(0));
+
+        return tree;
+    }
+
+    public static Tree getSumBT() {
+        Tree tree = new Tree(20);
+
+        tree.getRoot().setLeft(new TreeNode(8));
+        tree.getRoot().getLeft().setLeft(new TreeNode(3));
+        tree.getRoot().getLeft().setRight(new TreeNode(5));
+
+        tree.getRoot().setRight(new TreeNode(2));
+        tree.getRoot().getRight().setLeft(new TreeNode(2));
+        tree.getRoot().getRight().setRight(new TreeNode(0));
+
+        return tree;
+    }
+
 
     public static int[] reverse(int arr[]) {
 
@@ -223,6 +253,25 @@ public class DSUtils {
         root.getRight().setLeft(new TreeNode(31));
         root.getRight().setMiddle(new TreeNode(55));
         root.getRight().setRight(new TreeNode(65));
+
+        return root;
+    }
+
+    public static Tree getInvalidLogicalAND() {
+
+        // Level 0
+        Tree root = new Tree(1);
+
+        // Level 1
+        root.getRoot().setLeft(new TreeNode(1));
+        root.getRoot().setRight(new TreeNode(0));
+
+        // Level 2
+        root.getRoot().getLeft().setLeft(new TreeNode(0));
+        root.getRoot().getLeft().setRight(new TreeNode(1));
+
+        root.getRoot().getRight().setLeft(new TreeNode(1));
+        root.getRoot().getRight().setRight(new TreeNode(1));
 
         return root;
     }

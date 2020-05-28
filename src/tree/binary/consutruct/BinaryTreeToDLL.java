@@ -18,7 +18,7 @@ public class BinaryTreeToDLL {
         Holder holder = new Holder();
         switch (t) {
             case T1:
-                set1(DSUtils.getPerfectBinaryTree().getRoot(), holder);
+                set1(DSUtils.getPerfectBinaryTree3Levels().getRoot(), holder);
                 System.out.println("Set 1 : " + holder.getQueue());
                 break;
             case T2:

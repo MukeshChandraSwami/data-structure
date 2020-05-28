@@ -8,7 +8,7 @@ public class ConstructMirror {
 
     public static void main(String[] args) {
 
-        TreeNode root = DSUtils.getPerfectBinaryTree().getRoot();
+        TreeNode root = DSUtils.getPerfectBinaryTree3Levels().getRoot();
 
         System.out.print("Level order : ");
         LevelOrderTraversal.levelOrderTraversal(root);

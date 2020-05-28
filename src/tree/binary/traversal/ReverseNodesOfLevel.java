@@ -8,23 +8,23 @@ public class ReverseNodesOfLevel {
 
     public static void main(String[] args) {
 
-        Tree tree = DSUtils.getPerfectBinaryTree();
+        Tree tree = DSUtils.getPerfectBinaryTree3Levels();
         System.out.print("Reverse Siblings of all levels : ");
         reverseSiblingsOfAllLevels(tree.getRoot().getLeft(),tree.getRoot().getRight());
         tree.inorder(tree.getRoot());
 
         System.out.print("\n\nReverse Siblings of alternate levels : ");
-        tree = DSUtils.getPerfectBinaryTree();
+        tree = DSUtils.getPerfectBinaryTree3Levels();
         reverseSiblingsOnAlternateLevel(tree.getRoot().getLeft(), tree.getRoot().getRight(), 0);
         tree.inorder(tree.getRoot());
 
         System.out.print("\n\nReverse nodes of levels (Mirror image of tree): ");
-        tree = DSUtils.getPerfectBinaryTree();
+        tree = DSUtils.getPerfectBinaryTree3Levels();
         reverseNodesOfAllLevels(tree.getRoot().getLeft(), tree.getRoot().getRight());
         tree.inorder(tree.getRoot());
 
         System.out.print("\n\nReverse nodes of alternate levels : ");
-        tree = DSUtils.getPerfectBinaryTree();
+        tree = DSUtils.getPerfectBinaryTree3Levels();
         reverseNodesOfAlternateLevels(tree.getRoot().getLeft(), tree.getRoot().getRight(), 0);
         tree.inorder(tree.getRoot());
 

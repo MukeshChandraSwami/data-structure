@@ -19,7 +19,7 @@ public class TraverseDiagonally {
 
     public static void main(String[] args) {
 
-        Tree tree = DSUtils.getPerfectBinaryTree();
+        Tree tree = DSUtils.getPerfectBinaryTree3Levels();
         System.out.print("Print diagonally via queue : ");
         printDiagonally(tree.getRoot());
     }

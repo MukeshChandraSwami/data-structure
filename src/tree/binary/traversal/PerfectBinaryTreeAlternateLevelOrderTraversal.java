@@ -11,7 +11,7 @@ import java.util.Stack;
 public class PerfectBinaryTreeAlternateLevelOrderTraversal {
 
     public static void main(String[] args) {
-        Tree tree = DSUtils.getPerfectBinaryTree();
+        Tree tree = DSUtils.getPerfectBinaryTree3Levels();
 
         System.out.print("Top to bottom : ");
         traverseTopTOBottom(tree.getRoot());
