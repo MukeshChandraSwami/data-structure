@@ -153,6 +153,30 @@ public class DSUtils {
         return list;
     }
 
+    public static Tree getSymmetricBinaryTree() {
+
+        Tree tree = new Tree(62);
+
+        // Setting left sub tree
+        tree.getRoot().setLeft(new TreeNode(40));
+        tree.getRoot().getLeft().setLeft(new TreeNode(31));
+        tree.getRoot().getLeft().getLeft().setLeft(new TreeNode(84));
+        tree.getRoot().getLeft().getLeft().setRight(new TreeNode(99));
+        tree.getRoot().getLeft().setRight(new TreeNode(42));
+        tree.getRoot().getLeft().getRight().setLeft(new TreeNode(39));
+        tree.getRoot().getLeft().getRight().setRight(new TreeNode(55));
+
+        tree.getRoot().setRight(new TreeNode(40));
+        tree.getRoot().getRight().setLeft(new TreeNode(42));
+        tree.getRoot().getRight().getLeft().setLeft(new TreeNode(55));
+        tree.getRoot().getRight().getLeft().setRight(new TreeNode(39));
+        tree.getRoot().getRight().setRight(new TreeNode(31));
+        tree.getRoot().getRight().getRight().setLeft(new TreeNode(99));
+        tree.getRoot().getRight().getRight().setRight(new TreeNode(84));
+
+        return tree;
+    }
+
     /**
      * @return
      *
@@ -171,6 +195,15 @@ public class DSUtils {
 
     public static Tree getPerfectBinaryTree3Levels() {
         Tree tree = new Tree(62);
+
+        leftTree(tree);
+
+        rightTree(tree);
+
+        return tree;
+    }
+
+    public static Tree leftTree(Tree tree) {
         // Setting left sub tree
         tree.getRoot().setLeft(new TreeNode(40));
         tree.getRoot().getLeft().setLeft(new TreeNode(31));
@@ -179,6 +212,11 @@ public class DSUtils {
         tree.getRoot().getLeft().setRight(new TreeNode(42));
         tree.getRoot().getLeft().getRight().setLeft(new TreeNode(39));
         tree.getRoot().getLeft().getRight().setRight(new TreeNode(55));
+
+        return tree;
+    }
+
+    public static Tree rightTree(Tree tree) {
 
         // Setting right sub tree.
         tree.getRoot().setRight(new TreeNode(91));
@@ -203,6 +241,20 @@ public class DSUtils {
         tree.getRoot().setRight(new TreeNode(2));
         tree.getRoot().getRight().setLeft(new TreeNode(2));
         tree.getRoot().getRight().setRight(new TreeNode(0));
+
+        return tree;
+    }
+
+    public static Tree getMirrorOfPerfectBinaryTree2Levels() {
+        Tree tree = new Tree(10);
+
+        tree.getRoot().setLeft(new TreeNode(2));
+        tree.getRoot().getLeft().setLeft(new TreeNode(0));
+        tree.getRoot().getLeft().setRight(new TreeNode(2));
+
+        tree.getRoot().setRight(new TreeNode(8));
+        tree.getRoot().getRight().setLeft(new TreeNode(5));
+        tree.getRoot().getRight().setRight(new TreeNode(3));
 
         return tree;
     }

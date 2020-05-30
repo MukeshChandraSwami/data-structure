@@ -4,6 +4,8 @@ import tree.binary.Tree;
 import tree.binary.common.TreeNode;
 import utils.DSUtils;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 public class TraverseWithoutRecursion {
@@ -60,7 +62,10 @@ public class TraverseWithoutRecursion {
      *      2.2 : Push right item of popped item if not null.
      *      2.3 : Push left item of popped item if not null.
      */
-    public static void preOrderTraversal(TreeNode root) {
+    public static List<Integer> preOrderTraversal(TreeNode root) {
+
+        List<Integer> l = new ArrayList<>();
+
         Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
 
@@ -68,6 +73,7 @@ public class TraverseWithoutRecursion {
 
             TreeNode popped = stack.pop();
             System.out.print("\t" + popped.getData() + "\t|");
+            l.add(popped.getData());
 
             if(popped.getRight() != null)
                 stack.push(popped.getRight());
@@ -76,6 +82,8 @@ public class TraverseWithoutRecursion {
                 stack.push(popped.getLeft());
 
         }
+
+        return l;
     }
 
     /**
