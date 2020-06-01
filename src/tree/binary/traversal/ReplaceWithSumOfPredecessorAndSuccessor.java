@@ -12,7 +12,7 @@ public class ReplaceWithSumOfPredecessorAndSuccessor {
             System.out.print("\t" + DSUtils.IN_ORDER[i] + "\t|");
         }
 
-        System.out.print("\n\nIn order traversal of sum: ");
+        System.out.print("\n\nIn order traversal of sumOfLeftLeaves: ");
         for(int i = 0; i <  result.length; i++){
             System.out.print("\t" + result[i] + "\t|");
         }

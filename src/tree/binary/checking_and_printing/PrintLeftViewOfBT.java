@@ -15,11 +15,11 @@ public class PrintLeftViewOfBT {
         if(root == null)
             return;
 
-        System.out.print("\t" + root.getData() + "\t|");
+        if(root.getLeft() != null) {
+            System.out.print("\t" + root.getLeft().getData() + "\t|");
+        }
 
         printLeftView(root.getLeft());
-
-        if(root.getRight() != null)
-            printLeftView(root.getRight().getLeft());
+        printLeftView(root.getRight());
     }
 }

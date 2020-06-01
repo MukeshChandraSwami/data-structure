@@ -8,26 +8,33 @@ public class SumOfAllNode {
     public static void main(String[] args) {
 
         TreeNode root = DSUtils.getTreeWithSmallNumbers().getRoot();
-        int sum = getSumOfAllNodes(root);
+        int sum = getSumOfAllNodes1(root);
         System.out.println(sum);
     }
 
-    public static int getSumOfAllNodes(TreeNode node) {
+    public static int getSumOfAllNodes2(TreeNode node) {
+        if(node == null)
+            return 0;
+
+        return node.getData() + getSumOfAllNodes2(node.getLeft()) + getSumOfAllNodes2(node.getRight());
+    }
+
+    public static int getSumOfAllNodes1(TreeNode node) {
 
         Holder h = new Holder();
-        getSumOfAllNodes(node,h);
+        getSumOfAllNodes1(node,h);
 
         return h.getSum();
     }
 
-    private static void getSumOfAllNodes(TreeNode node, Holder h) {
+    private static void getSumOfAllNodes1(TreeNode node, Holder h) {
 
         if(node == null)
             return;
 
         h.setSum(h.getSum() + node.getData());
-        getSumOfAllNodes(node.getLeft(),h);
-        getSumOfAllNodes(node.getRight(),h);
+        getSumOfAllNodes1(node.getLeft(),h);
+        getSumOfAllNodes1(node.getRight(),h);
     }
 
     private static class Holder{

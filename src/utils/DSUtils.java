@@ -108,7 +108,7 @@ public class DSUtils {
      * Post-order :
      * Level-order :
      *
-     *                           2
+     *                           1
      *                       /       \
      *                     /          \
      *                   4             8
@@ -116,10 +116,11 @@ public class DSUtils {
      *                    16        11
      *                   /  \      /  \
      *                  6    5    12   9
-     *
+     *                              \
+     *                               8
      */
     public static Tree getTreeWithSmallNumbers() {
-        Tree tree = new Tree(2);
+        Tree tree = new Tree(1);
         // Setting left sub tree
         tree.getRoot().setLeft(new TreeNode(4));
         tree.getRoot().getLeft().setRight(new TreeNode(16));
@@ -131,6 +132,8 @@ public class DSUtils {
         tree.getRoot().getRight().setLeft(new TreeNode(11));
         tree.getRoot().getRight().getLeft().setLeft(new TreeNode(12));
         tree.getRoot().getRight().getLeft().setRight(new TreeNode(9));
+
+        tree.getRoot().getRight().getLeft().getLeft().setRight(new TreeNode(8));
 
         return tree;
     }
