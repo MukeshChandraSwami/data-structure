@@ -330,4 +330,33 @@ public class DSUtils {
 
         return root;
     }
+    /**
+     * @return
+     *
+     *                           4
+     *                       /       \
+     *                     /          \
+     *                   3             5
+     *                    \           /
+     *                    2          6
+     *                   /  \      /  \
+     *                 1     1   7     7
+     *
+     */
+    public static Tree getContinuousTree() {
+        Tree tree = new Tree(4);
+        // Setting left sub tree
+        tree.getRoot().setLeft(new TreeNode(3));
+        tree.getRoot().getLeft().setRight(new TreeNode(2));
+        tree.getRoot().getLeft().getRight().setLeft(new TreeNode(1));
+        tree.getRoot().getLeft().getRight().setRight(new TreeNode(1));
+
+        // Setting right sub tree.
+        tree.getRoot().setRight(new TreeNode(5));
+        tree.getRoot().getRight().setLeft(new TreeNode(6));
+        tree.getRoot().getRight().getLeft().setLeft(new TreeNode(7));
+        tree.getRoot().getRight().getLeft().setRight(new TreeNode(7));
+
+        return tree;
+    }
 }

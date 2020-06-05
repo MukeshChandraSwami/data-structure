@@ -23,6 +23,7 @@ public class Expressions {
     public static final String INFIX18 = "(a+b)*c+d/(e+f*g)-h";
     public static final String INFIX19 = "a+b*c";
     public static final String INFIX20 = "k+l-m*n+(o^p)*w/u/v*t+q";
+    public static final String INFIX21 = "(1*2)+(3*4)-5";
 
 
 

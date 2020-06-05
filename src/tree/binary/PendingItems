@@ -5,3 +5,4 @@
 5. Construct BT via Left child Right Siblings representation. (https://www.geeksforgeeks.org/creating-tree-left-child-right-sibling-representation/)
 6. Convert Binary Tree to Binary Search Tree.
 7. Max sum of non adjacent nodes (https://www.geeksforgeeks.org/maximum-sum-nodes-binary-tree-no-two-adjacent/)
+8. LCA by using RMQ (https://www.geeksforgeeks.org/find-lca-in-binary-tree-using-rmq/)
