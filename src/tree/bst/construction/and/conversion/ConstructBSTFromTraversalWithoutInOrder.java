@@ -16,6 +16,10 @@ public class ConstructBSTFromTraversalWithoutInOrder {
         System.out.print("\n\nConstruct BST by Post-Order traversal [Pre Order]: ");
         root = constructBSTFromPostOrder(DSUtils.POST_ORDER_BST);
         TraverseWithoutRecursion.preOrderTraversal(root);
+
+        System.out.print("\n\nConstruct BST by Level-Order traversal [Pre Order]: ");
+        root = constructBSTFromLevelOrder(DSUtils.LEVEL_ORDER_BST);
+        TraverseWithoutRecursion.preOrderTraversal(root);
     }
 
     /**
@@ -84,5 +88,32 @@ public class ConstructBSTFromTraversalWithoutInOrder {
         }
 
         return root;
+    }
+
+    public static TreeNode constructBSTFromLevelOrder(int[] level) {
+
+        TreeNode root = new TreeNode(level[0]);
+
+        for(int i = 1; i < level.length; i++) {
+            TreeNode node = constructBSTFromLevelOrder(root, level[i]);
+            if(level[i] <= node.getData())
+                node.setLeft(new TreeNode(level[i]));
+            else
+                node.setRight(new TreeNode(level[i]));
+        }
+
+        return root;
+    }
+
+    private static TreeNode constructBSTFromLevelOrder(TreeNode root, int i) {
+
+        if(root.getLeft() == null && root.getRight() == null)
+            return root;
+
+        if(i < root.getData())
+           return root.getLeft() != null ? constructBSTFromLevelOrder(root.getLeft(), i) : root;
+        else
+           return root.getRight() != null ? constructBSTFromLevelOrder(root.getRight(), i) : root;
+
     }
 }

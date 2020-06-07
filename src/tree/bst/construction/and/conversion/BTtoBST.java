@@ -10,8 +10,6 @@ import java.util.List;
 
 public class BTtoBST {
 
-    private static int index = 1;
-
     public static void main(String[] args) {
 
         TreeNode root = convertFromBTtoBST(DSUtils.getTree().getRoot());
