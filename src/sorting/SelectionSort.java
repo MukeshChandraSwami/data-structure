@@ -12,7 +12,7 @@ public class SelectionSort {
         showArray(sortedArr);
     }
 
-    private static int[] sort(int[] arr) {
+    public static int[] sort(int[] arr) {
 
         for(int i = 0; i < arr.length; i++) {
 

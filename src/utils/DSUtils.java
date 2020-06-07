@@ -3,6 +3,7 @@ package utils;
 import stack.conversion.ExpressionType;
 import tree.binary.Tree;
 import tree.binary.common.TreeNode;
+import tree.bst.BST;
 
 import java.util.LinkedList;
 
@@ -356,6 +357,47 @@ public class DSUtils {
         tree.getRoot().getRight().setLeft(new TreeNode(6));
         tree.getRoot().getRight().getLeft().setLeft(new TreeNode(7));
         tree.getRoot().getRight().getLeft().setRight(new TreeNode(7));
+
+        return tree;
+    }
+
+    /********************* BST ***********************/
+
+    public static final int[] IN_ORDER_BST = {5,6,7,9,10,12,15,17,18};
+    public static final int[] PRE_ORDER_BST = {10,5,7,6,9,18,15,12,17};
+    public static final int[] POST_ORDER_BST = {6,9,7,5,12,17,15,18,10};
+    public static final int[] LEVEL_ORDER_BST = {10,5,18,7,15,6,9,12,17};
+
+    /**
+     * In-Order :   5	|	6	|	7	|	9	|	10	|	12	|	15	|	17	|	18	|
+     * Pre-Order :  10	|	5	|	7	|	6	|	9	|	18	|	15	|	12	|	17	|
+     * Post-Order : 6	|	9	|	7	|	5	|	12	|	17	|	15	|	18	|	10	|
+     * Level-Order :10	|	5	|	18	|	7	|	15	|	6	|	9	|	12	|	17	|
+     *
+     *                           10
+     *                       /       \
+     *                     /          \
+     *                    5           18
+     *                    \           /
+     *                    7         15
+     *                   /  \      /  \
+     *                  6    9   12   17
+     *
+     */
+    public static BST getBST() {
+        BST tree = new BST(10);
+
+        // Setting left sub tree
+        tree.insert(5);
+        tree.insert(7);
+        tree.insert(6);
+        tree.insert(9);
+
+        // Setting right sub tree.
+        tree.insert(18);
+        tree.insert(15);
+        tree.insert(12);
+        tree.insert(17);
 
         return tree;
     }
