@@ -3,6 +3,7 @@ package tree.binary.common;
 public class TreeNode {
 
     private int data;
+    private int height;
     private TreeNode left;
     private TreeNode right;
     private TreeNode next;
@@ -10,6 +11,7 @@ public class TreeNode {
 
     public TreeNode(int data) {
         this.data = data;
+        this.height = 1;
         this.left = this.right = this.next = this.middle = null;
     }
 
@@ -53,6 +55,14 @@ public class TreeNode {
 
     public void setMiddle(TreeNode middle) {
         this.middle = middle;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
     }
 
     @Override

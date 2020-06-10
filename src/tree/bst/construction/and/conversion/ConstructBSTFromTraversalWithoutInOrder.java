@@ -95,25 +95,29 @@ public class ConstructBSTFromTraversalWithoutInOrder {
         TreeNode root = new TreeNode(level[0]);
 
         for(int i = 1; i < level.length; i++) {
-            TreeNode node = constructBSTFromLevelOrder(root, level[i]);
-            if(level[i] <= node.getData())
-                node.setLeft(new TreeNode(level[i]));
-            else
-                node.setRight(new TreeNode(level[i]));
+            constructBSTFromLevelOrder(root, level[i]);
         }
 
         return root;
     }
 
-    private static TreeNode constructBSTFromLevelOrder(TreeNode root, int i) {
+    private static void constructBSTFromLevelOrder(TreeNode root, int i) {
 
-        if(root.getLeft() == null && root.getRight() == null)
-            return root;
+        if(root == null)
+            return;
 
-        if(i < root.getData())
-           return root.getLeft() != null ? constructBSTFromLevelOrder(root.getLeft(), i) : root;
-        else
-           return root.getRight() != null ? constructBSTFromLevelOrder(root.getRight(), i) : root;
-
+        if(i < root.getData()) {
+            if(root.getLeft() != null) {
+                constructBSTFromLevelOrder(root.getLeft(), i);
+            } else {
+                root.setLeft(new TreeNode(i));
+            }
+        } else {
+            if(root.getRight() != null) {
+                constructBSTFromLevelOrder(root.getRight(), i);
+            } else {
+                root.setRight(new TreeNode(i));
+            }
+        }
     }
 }

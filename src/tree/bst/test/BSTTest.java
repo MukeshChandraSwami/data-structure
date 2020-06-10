@@ -4,11 +4,13 @@ import tree.bst.BST;
 import tree.common.Traversal;
 import utils.DSUtils;
 
+import java.util.Random;
+
 public class BSTTest {
 
     public static void main(String[] args) {
 
-        /*BST bst = new BST(25);
+        BST bst = new BST(25);
         System.out.print("Inserting data in tree : 25  |" );
 
         new Random()
@@ -18,9 +20,9 @@ public class BSTTest {
                 .forEach(i -> {
                     System.out.print("\t" + i + "\t|");
                     bst.insert(i);
-                });*/
+                });
 
-        BST bst = DSUtils.getBST();
+        /*BST bst = DSUtils.getBST();*/
 
         System.out.print("\n\nIn order traversal of tree : ");
         bst.traverse(Traversal.IN_ORDER);

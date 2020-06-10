@@ -26,11 +26,7 @@ public class BST {
 
     public void insert(int data) {
 
-        TreeNode node = insert(this.root, data);
-        if (data <= node.getData())
-            node.setLeft(new TreeNode(data));
-        else
-            node.setRight(new TreeNode(data));
+        insert(this.root, data);
     }
 
     public boolean search(int data) {
@@ -72,15 +68,23 @@ public class BST {
         }
     }
 
-    private TreeNode insert(TreeNode root, int data) {
+    private void insert(TreeNode root, int data) {
 
-        if (root.getLeft() == null && root.getRight() == null)
-            return root;
+        if(root == null)
+            return;
 
-        if (data < root.getData()) {
-            return root.getLeft() != null ? insert(root.getLeft(), data) : root;
+        if(data < root.getData()) {
+            if(root.getLeft() != null) {
+                insert(root.getLeft(), data);
+            } else {
+                root.setLeft(new TreeNode(data));
+            }
         } else {
-            return root.getRight() != null ? insert(root.getRight(), data) : root;
+            if(root.getRight() != null) {
+                insert(root.getRight(), data);
+            } else {
+                root.setRight(new TreeNode(data));
+            }
         }
     }
 
