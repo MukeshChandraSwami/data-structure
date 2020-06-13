@@ -242,7 +242,7 @@ public class DSUtils {
         tree.getRoot().getLeft().setLeft(new TreeNode(3));
         tree.getRoot().getLeft().setRight(new TreeNode(5));
 
-        tree.getRoot().setRight(new TreeNode(2));
+        tree.getRoot().setRight(new TreeNode(12));
         tree.getRoot().getRight().setLeft(new TreeNode(2));
         tree.getRoot().getRight().setRight(new TreeNode(0));
 
