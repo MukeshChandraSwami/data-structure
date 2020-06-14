@@ -12,7 +12,7 @@ public class CheckIfBST {
         System.out.print("Is BST : " + status);
     }
 
-    private static boolean checkRecursively(TreeNode root) {
+    public static boolean checkRecursively(TreeNode root) {
 
         if(root == null || (root.getLeft() == null && root.getRight() == null))
             return true;

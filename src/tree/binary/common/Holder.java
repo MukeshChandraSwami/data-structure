@@ -16,6 +16,10 @@ public class Holder {
         this.flag = flag;
     }
 
+    public Holder(int x) {
+        this.x = x;
+    }
+
     public int getX() {
         return x;
     }

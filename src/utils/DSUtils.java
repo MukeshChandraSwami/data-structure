@@ -392,6 +392,8 @@ public class DSUtils {
         tree.insert(7);
         tree.insert(6);
         tree.insert(9);
+        /*tree.insert(3);
+        tree.insert(0);*/
 
         // Setting right sub tree.
         tree.insert(18);

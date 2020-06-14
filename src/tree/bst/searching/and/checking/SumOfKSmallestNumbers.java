@@ -18,11 +18,9 @@ public class SumOfKSmallestNumbers {
         if(root == null || counter >= k)
             return 0;
 
-        int sum = 0;
-        int l = sum(root.getLeft(), k);
-        
-        int r = sum(root.getLeft(), k);
-
+        int l = sum(root.getLeft(), k) + (counter < k ? root.getData() : 0);
+        ++counter;
+        int r = sum(root.getRight(), k) + (counter < k ? root.getData() : 0);
 
         return l + r;
     }
