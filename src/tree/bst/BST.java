@@ -161,8 +161,8 @@ public class BST {
                 return node.getLeft();
 
             TreeNode newNode = null;
-
-            if (del == LookAfterDelete.LEFT_SUB_TREE) {
+            this.del = root.getLeft() != null ? LookAfterDelete.LEFT_SUB_TREE : LookAfterDelete.RIGHT_SUB_TREE;
+            if (this.del == LookAfterDelete.LEFT_SUB_TREE) {
                 newNode = findHigh(node.getLeft());
                 node.setData(newNode.getData());
                 node.setLeft(delete(node.getLeft(), node.getData()));
