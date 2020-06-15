@@ -295,6 +295,18 @@ public class AVLTree {
         return n != null ? n.getHeight() : 0;
     }
 
+    public int totalNodes() {
+        return totalNodes(this.root);
+    }
+
+    private int totalNodes(TreeNode node) {
+        if(node == null)
+            return 0;
+        return 1
+                + totalNodes(node.getLeft())
+                + totalNodes(node.getRight());
+    }
+
     public TreeNode getRoot() {
         return root;
     }
