@@ -6,6 +6,7 @@ import tree.binary.common.TreeNode;
 import tree.bst.BST;
 
 import java.util.LinkedList;
+import java.util.Random;
 
 public class DSUtils {
 
@@ -402,5 +403,13 @@ public class DSUtils {
         tree.insert(17);
 
         return tree;
+    }
+
+    public static void printRandom(int limit) {
+        new Random()
+                .ints(1, 100)
+                .distinct()
+                .limit(limit)
+                .forEach(i -> System.out.print("\t" + i + "\t|"));
     }
 }

@@ -39,7 +39,7 @@ public class CelebrityProblem {
 
     private static int checkForCelebrity(int total) {
 
-        Stack stack = new Stack(4);
+        Stack stack = new Stack(total);
 
         for(int i = 0; i < total; i++)
             stack.push(i);
