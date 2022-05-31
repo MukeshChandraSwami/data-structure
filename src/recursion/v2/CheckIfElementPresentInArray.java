@@ -1,6 +1,7 @@
 package recursion.v2;
 
-import array.ArrayUtils;
+
+import utils.ArrayUtils;
 
 public class CheckIfElementPresentInArray {
 
