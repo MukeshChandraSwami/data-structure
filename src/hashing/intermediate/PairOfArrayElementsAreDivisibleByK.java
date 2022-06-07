@@ -2,6 +2,7 @@ package hashing.intermediate;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class PairOfArrayElementsAreDivisibleByK {
 
@@ -37,7 +38,7 @@ public class PairOfArrayElementsAreDivisibleByK {
 
             int kKey = k - key;
 
-            if(!freq.containsKey(kKey) || freq.get(key) != freq.get(kKey))
+            if(!freq.containsKey(kKey) || !Objects.equals(freq.get(key), freq.get(kKey)))
                 return false;
         }
 

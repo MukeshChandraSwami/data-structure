@@ -29,7 +29,7 @@ public class DivisibleByOneOther {
             if(arr[j] == 0)
                 continue;
 
-            for(int i = 2; i < Math.sqrt(arr[j]); i++) {
+            for(int i = 2; i <= Math.sqrt(arr[j]); i++) {
 
                 if(arr[j] % i == 0) {
                     int factor2 = arr[j]/i;

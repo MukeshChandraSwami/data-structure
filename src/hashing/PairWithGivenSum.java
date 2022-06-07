@@ -11,6 +11,7 @@ public class PairWithGivenSum {
 
         int sum = 11;
         int[] arr = ArrayUtils.getSortedIntegerArrayWithSmallNumbers();
+        ArrayUtils.printArray(arr,"Array");
 
         printPair(arr, sum);
     }
