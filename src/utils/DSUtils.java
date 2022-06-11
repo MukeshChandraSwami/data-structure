@@ -412,4 +412,18 @@ public class DSUtils {
                 .limit(limit)
                 .forEach(i -> System.out.print("\t" + i + "\t|"));
     }
+
+    public static int getIndexForTrie(char ch, int defaultIndex) {
+        int index = defaultIndex;
+
+        if(ch >= 'a' && ch <= 'z') {
+            index = ch - 'a';
+        } else if(ch >= 'A' && ch <= 'Z') {
+            index = ch - 'A';
+        } else if(ch >= '0' && ch <= '1') {
+            index = ch - '0';
+        }
+
+        return index;
+    }
 }
