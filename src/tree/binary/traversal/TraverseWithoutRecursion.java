@@ -4,10 +4,7 @@ import tree.binary.Tree;
 import tree.binary.common.TreeNode;
 import utils.DSUtils;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Stack;
+import java.util.*;
 
 public class TraverseWithoutRecursion {
 
@@ -18,10 +15,10 @@ public class TraverseWithoutRecursion {
         inOrderTraversal3(tree.getRoot());
 
         System.out.print("\n\nPre-order Traversing : ");
-        preOrderTraversal(tree.getRoot());
+        preOrderTraversal2(tree.getRoot());
 
         System.out.print("\n\nPost-order Traversing : ");
-        postOrderTraversal(tree.getRoot());
+        postOrderTraversal2(tree.getRoot());
     }
 
     /**
@@ -130,7 +127,7 @@ public class TraverseWithoutRecursion {
      *      2.2 : Push right item of popped item if not null.
      *      2.3 : Push left item of popped item if not null.
      */
-    public static List<Integer> preOrderTraversal(TreeNode root) {
+    public static List<Integer> preOrderTraversal1(TreeNode root) {
 
         List<Integer> l = new ArrayList<>();
 
@@ -154,6 +151,32 @@ public class TraverseWithoutRecursion {
         return l;
     }
 
+    public static void preOrderTraversal2(TreeNode root) {
+        TreeNode current = root;
+
+        while(Objects.nonNull(current)) {
+
+            if(Objects.isNull(current.getLeft())) {
+                System.out.print("\t" + current.getData() + "\t|");
+                current = current.getRight();
+            } else {
+                TreeNode prev = current.getLeft();
+                while(Objects.nonNull(prev.getRight()) && prev.getRight() != current) {
+                    prev = prev.getRight();
+                }
+
+                if(Objects.isNull(prev.getRight())) {
+                    System.out.print("\t" + current.getData() + "\t|");
+                    prev.setRight(current);
+                    current = current.getLeft();
+                } else {
+                    prev.setRight(null);
+                    current = current.getRight();
+                }
+            }
+        }
+    }
+
     /**
      * @param root
      * Algo :
@@ -163,7 +186,7 @@ public class TraverseWithoutRecursion {
      *      2.2 : Push left and right of that popped item in stack1.
      * Step 3 : Now print stack2
      */
-    public static void postOrderTraversal(TreeNode root) {
+    public static void postOrderTraversal1(TreeNode root) {
         Stack<TreeNode> stack1 = new Stack<>();
         stack1.push(root);
 
@@ -182,6 +205,39 @@ public class TraverseWithoutRecursion {
 
         while(!stack2.isEmpty()) {
             System.out.print("\t" + stack2.pop().getData() + "\t|");
+        }
+    }
+
+    public static void postOrderTraversal2(TreeNode root) {
+
+        List<Integer> l = new ArrayList<>();
+        TreeNode current = root;
+
+        while(Objects.nonNull(current)) {
+            if(Objects.isNull(current.getRight())) {
+                l.add(current.getData());
+                current = current.getLeft();
+            } else {
+
+                TreeNode prev = current.getRight();
+                while(Objects.nonNull(prev.getLeft()) && prev.getLeft() != current) {
+                    prev = prev.getLeft();
+                }
+
+                if(Objects.isNull(prev.getLeft())) {
+                    prev.setLeft(current);
+                    l.add(current.getData());
+                    current = current.getRight();
+                } else {
+                    prev.setLeft(null);
+                    current = current.getLeft();
+                }
+            }
+        }
+
+        Collections.reverse(l);
+        for(int i : l) {
+            System.out.print("\t" + i + "\t|");
         }
     }
 }

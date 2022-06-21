@@ -15,7 +15,7 @@ public class ConstructTreeWithBracketInString {
         String str = "4(2(3)(1(8(7(6)(10)))))(6(5))";
 
         TreeNode node = constructTreeFromString(str.toCharArray(), 0, str.length() - 1);
-        TraverseWithoutRecursion.preOrderTraversal(node);
+        TraverseWithoutRecursion.preOrderTraversal1(node);
     }
 
     public static TreeNode constructTreeFromString(char[] ch, int start, int end) {

@@ -2,7 +2,6 @@ package tree.binary.consutruct;
 
 import tree.binary.common.TreeNode;
 import tree.binary.traversal.TraverseWithoutRecursion;
-import utils.DSUtils;
 
 /**
  * Idea is to treat higher element as root.
@@ -15,7 +14,7 @@ public class ConstructBTFromInViaHighAsRoot {
         int inOrder[] = {1, 5, 10, 40, 30, 15, 28, 20};
 
         TreeNode root = getBT(inOrder, 0, inOrder.length - 1);
-        TraverseWithoutRecursion.preOrderTraversal(root);
+        TraverseWithoutRecursion.preOrderTraversal1(root);
     }
 
     public static TreeNode getBT(int[] inOrder, int inStart, int inEnd) {

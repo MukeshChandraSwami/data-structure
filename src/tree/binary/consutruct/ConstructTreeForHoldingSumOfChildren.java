@@ -14,7 +14,7 @@ public class ConstructTreeForHoldingSumOfChildren {
 
         convertToHoldSumOfChildren(root);
 
-        TraverseWithoutRecursion.preOrderTraversal(root);
+        TraverseWithoutRecursion.preOrderTraversal1(root);
     }
 
     public static int convertToHoldSumOfChildren(TreeNode node) {

@@ -24,7 +24,7 @@ public class TreeFromInAndLevel {
         int[] levelOrder = DSUtils.LEVEL_ORDER;
         TreeNode root = createTree(inOrder, levelOrder);
 
-        TraverseWithoutRecursion.preOrderTraversal(root);
+        TraverseWithoutRecursion.preOrderTraversal1(root);
     }
 
     public static TreeNode createTree(int[] inOrder, int[] levelOrder) {

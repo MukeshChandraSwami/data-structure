@@ -13,7 +13,7 @@ public class TreeFromInAndPre {
         TreeNode root = createTree(DSUtils.PRE_ORDER, DSUtils.IN_ORDER, 0, DSUtils.IN_ORDER.length - 1);
 
         System.out.print("Post order traversal of tree : ");
-        TraverseWithoutRecursion.postOrderTraversal(root);
+        TraverseWithoutRecursion.postOrderTraversal1(root);
     }
 
     public static TreeNode createTree(int[] preOrder, int[] inOrder, int inStart, int inEnd) {

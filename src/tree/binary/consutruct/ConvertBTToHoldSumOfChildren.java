@@ -13,7 +13,7 @@ public class ConvertBTToHoldSumOfChildren {
 
         TreeNode root = DSUtils.getTree().getRoot();
         convertTreeToHoldSumOgChildren(root);
-        TraverseWithoutRecursion.preOrderTraversal(root);
+        TraverseWithoutRecursion.preOrderTraversal1(root);
     }
 
     public static void convertTreeToHoldSumOgChildren(TreeNode node) {

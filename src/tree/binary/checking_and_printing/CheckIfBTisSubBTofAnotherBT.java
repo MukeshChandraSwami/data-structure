@@ -21,9 +21,9 @@ public class CheckIfBTisSubBTofAnotherBT {
     public static boolean checkIfSubTree(TreeNode tree1, TreeNode tree2) {
 
         System.out.print("First Tree : ");
-        List<Integer> traversal1 = TraverseWithoutRecursion.preOrderTraversal(tree1);
+        List<Integer> traversal1 = TraverseWithoutRecursion.preOrderTraversal1(tree1);
         System.out.print("\n\nSecond Tree : ");
-        List<Integer> traversal2 = TraverseWithoutRecursion.preOrderTraversal(tree2);
+        List<Integer> traversal2 = TraverseWithoutRecursion.preOrderTraversal1(tree2);
         return traversal1.containsAll(traversal2);
     }
 }

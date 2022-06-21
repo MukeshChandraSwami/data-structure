@@ -11,7 +11,7 @@ public class TreeFromInAndPost {
     public static void main(String[] args) {
 
         TreeNode root = constructTreeFromInAndPostOrderTraversal(DSUtils.IN_ORDER, DSUtils.POST_ORDER, 0, DSUtils.IN_ORDER.length-1);
-        TraverseWithoutRecursion.preOrderTraversal(root);
+        TraverseWithoutRecursion.preOrderTraversal1(root);
     }
 
     public static TreeNode constructTreeFromInAndPostOrderTraversal(int[] inOrder, int[] postOrder, int inStart, int inEnd) {

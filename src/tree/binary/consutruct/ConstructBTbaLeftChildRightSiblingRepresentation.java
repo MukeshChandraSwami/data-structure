@@ -19,7 +19,7 @@ public class ConstructBTbaLeftChildRightSiblingRepresentation {
         TreeNode ternaryTree = DSUtils.getTernaryTree();
 
         TreeNode root = createBTViaLeftChildRightSiblingsMethod(ternaryTree);
-        TraverseWithoutRecursion.preOrderTraversal(root);
+        TraverseWithoutRecursion.preOrderTraversal1(root);
     }
 
     public static TreeNode createBTViaLeftChildRightSiblingsMethod(TreeNode ternaryTree) {

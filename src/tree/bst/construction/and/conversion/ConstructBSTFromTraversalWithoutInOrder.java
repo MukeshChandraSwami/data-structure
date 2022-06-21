@@ -11,15 +11,15 @@ public class ConstructBSTFromTraversalWithoutInOrder {
     public static void main(String[] args) {
         System.out.print("Construct BST by Pre-Order traversal [Post Order]: ");
         TreeNode root = constructBSTFromPreOrder(DSUtils.PRE_ORDER_BST);
-        TraverseWithoutRecursion.postOrderTraversal(root);
+        TraverseWithoutRecursion.postOrderTraversal1(root);
 
         System.out.print("\n\nConstruct BST by Post-Order traversal [Pre Order]: ");
         root = constructBSTFromPostOrder(DSUtils.POST_ORDER_BST);
-        TraverseWithoutRecursion.preOrderTraversal(root);
+        TraverseWithoutRecursion.preOrderTraversal1(root);
 
         System.out.print("\n\nConstruct BST by Level-Order traversal [Pre Order]: ");
         root = constructBSTFromLevelOrder(DSUtils.LEVEL_ORDER_BST);
-        TraverseWithoutRecursion.preOrderTraversal(root);
+        TraverseWithoutRecursion.preOrderTraversal1(root);
     }
 
     /**
