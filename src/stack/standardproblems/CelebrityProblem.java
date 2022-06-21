@@ -15,7 +15,7 @@ import stack.Stack;
  *      2.1 : If yes then A can not be a celebrity and push B back to stack.
  *      2.2 : If no then A can be a celebrity so push A back to stack.
  * Step 3 : Do it until only 1 person left in the stack.
- * Step 4 : Finally check whether this person knows any one in the party
+ * Step 4 : Finally check whether this person knows anyone in the party
  *      4.1 : If yes then it can not be a celebrity
  *      4.2 : Else it is the celebrity.
  */

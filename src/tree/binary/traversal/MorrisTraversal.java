@@ -13,4 +13,8 @@ public class MorrisTraversal {
     public static void morrisPreOrderTraversal(Tree tree) {
 
     }
+
+    public static void morrisInOrderTraversal(Tree tree) {
+        TraverseWithoutRecursion.inOrderTraversal3(tree.getRoot());
+    }
 }

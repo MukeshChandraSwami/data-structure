@@ -48,6 +48,7 @@ public class Expressions {
     public static final String POSTFIX18 = "ab+c*defg*+/+h-";
     public static final String POSTFIX19 = "abc*+";
     public static final String POSTFIX20 = "kl+mn*-op^w*u/v/t*+q+";
+    public static final String POSTFIX21 = "21*34*+5-";
 
 
 

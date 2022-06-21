@@ -17,7 +17,7 @@ public class SortedLIstToBST {
                 .collect(Collectors.toList());
 
         TreeNode root = constructBST(list, 0, list.size() - 1);
-        TraverseWithoutRecursion.inOrderTraversal(root);
+        TraverseWithoutRecursion.inOrderTraversal1(root);
     }
 
     public static TreeNode constructBST(List<Integer> list, int start, int end) {

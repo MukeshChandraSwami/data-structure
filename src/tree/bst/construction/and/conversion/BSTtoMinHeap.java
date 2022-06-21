@@ -18,11 +18,11 @@ public class BSTtoMinHeap {
     public static void main(String[] args) {
         TreeNode root = DSUtils.getBST().getRoot();
         System.out.print("In order before conversion : ");
-        TraverseWithoutRecursion.inOrderTraversal(root);
+        TraverseWithoutRecursion.inOrderTraversal1(root);
         convertUsingList(root);
 
         System.out.print("\n\nIn order after conversion [Using List] : ");
-        TraverseWithoutRecursion.inOrderTraversal(root);
+        TraverseWithoutRecursion.inOrderTraversal1(root);
 
         System.out.print("\n\nIn order after conversion [Using recursion]");
     }

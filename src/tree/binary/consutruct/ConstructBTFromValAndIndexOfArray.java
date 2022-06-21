@@ -16,7 +16,7 @@ public class ConstructBTFromValAndIndexOfArray {
 
         int arr[] = {1, 5, 5, 2, 2, -1, 3};
         TreeNode tree = createTree(arr);
-        TraverseWithoutRecursion.inOrderTraversal(tree);
+        TraverseWithoutRecursion.inOrderTraversal1(tree);
     }
 
     public static TreeNode createTree(int[] arr) {

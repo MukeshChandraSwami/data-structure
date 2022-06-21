@@ -14,10 +14,10 @@ public class BTtoBST {
 
         TreeNode root = convertFromBTtoBST(DSUtils.getTree().getRoot());
         System.out.print("In order traversal before :");
-        TraverseWithoutRecursion.inOrderTraversal(DSUtils.getTree().getRoot());
+        TraverseWithoutRecursion.inOrderTraversal1(DSUtils.getTree().getRoot());
 
         System.out.print("\n\nIn order traversal after :");
-        TraverseWithoutRecursion.inOrderTraversal(root);
+        TraverseWithoutRecursion.inOrderTraversal1(root);
     }
 
     //[39, 40, 42, 55, 62, 70, 79, 84, 91]

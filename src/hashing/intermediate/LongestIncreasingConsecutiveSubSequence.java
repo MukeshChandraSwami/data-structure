@@ -1,7 +1,10 @@
 package hashing.intermediate;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class LongestIncreasingConsecutiveSubSequence {
 
@@ -9,11 +12,11 @@ public class LongestIncreasingConsecutiveSubSequence {
 
     public static void main(String[] args) {
 
-        int len = getLength(ARR);
-        System.out.println(len);
+        System.out.println(getLength1(ARR));
+        System.out.println(getLength2(ARR));
     }
 
-    private static int getLength(int[] arr) {
+    private static int getLength1(int[] arr) {
         Map<Integer, Integer> map = new HashMap<>();
 
         for(int i = 0; i < arr.length; i++) {
@@ -33,6 +36,28 @@ public class LongestIncreasingConsecutiveSubSequence {
             }
 
             res = Math.max(res, maxLen);
+        }
+
+        return res;
+    }
+
+    private static int getLength2(int []arr) {
+        Set<Integer> s = Arrays.stream(arr)
+                .boxed()
+                .collect(Collectors.toSet());
+
+
+        int res = 0;
+        for(int i : s) {
+            if(!s.contains(i - 1)) {
+                int len = 1;
+                while (s.contains(i + 1)) {
+                    len += 1;
+                    i = i + 1;
+                }
+
+                res = Math.max(res, len);
+            }
         }
 
         return res;

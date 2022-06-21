@@ -2,7 +2,7 @@ package hashing;
 
 public class LongestSubArrayWithEqualNumOf0And1 {
 
-    private static int []ARR = {0, 1, 1, 0, 0, 1};
+    private static int []ARR = {0, 1, 1, 0, 1, 1};
 
     public static void main(String[] args) {
 

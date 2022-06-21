@@ -12,7 +12,7 @@ public class LRU {
 
     private static final String HIT = "HIT";
     private static final String MISS = "MISS";
-    private static Map<String, Integer> HIT_AND_MISS = new HashMap<>();
+    private static final Map<String, Integer> HIT_AND_MISS = new HashMap<>();
 
     static {
         HIT_AND_MISS.put(HIT,0);

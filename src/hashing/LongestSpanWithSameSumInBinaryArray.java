@@ -1,6 +1,6 @@
 package hashing;
 
-public class LongestSpanWithWithSameSumInBinaryArray {
+public class LongestSpanWithSameSumInBinaryArray {
 
     private static final int []ARR1 = {0, 1, 0, 1, 1, 1, 1};
     private static final int []ARR2 = {1, 1, 1, 1, 1, 0, 1};

@@ -27,9 +27,8 @@ public class SortArrayUsingStack {
 
     private static Integer[] sortArray(Integer[] arr) {
         Stack stack = new Stack(arr.length);
-        Arrays.asList(arr)
-                .stream()
-                .forEach(data -> stack.push(data));
+        Arrays.stream(arr)
+                .forEach(stack::push);
         Sort.sort(stack);
 
         for(int i = 0; i < arr.length; i++) {

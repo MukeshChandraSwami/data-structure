@@ -6,6 +6,7 @@ import utils.DSUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Stack;
 
 public class TraverseWithoutRecursion {
@@ -14,7 +15,7 @@ public class TraverseWithoutRecursion {
         Tree tree = DSUtils.getTree();
 
         System.out.print("Inorder Traversing : ");
-        inOrderTraversal(tree.getRoot());
+        inOrderTraversal3(tree.getRoot());
 
         System.out.print("\n\nPre-order Traversing : ");
         preOrderTraversal(tree.getRoot());
@@ -35,7 +36,7 @@ public class TraverseWithoutRecursion {
      *      4.3 : Set current = popped_item.right and repeat from step 3.
      * Step 5 : If current is NULL and stack is empty then terminate.
      */
-    public static void inOrderTraversal(TreeNode root) {
+    public static void inOrderTraversal1(TreeNode root) {
 
         Stack<TreeNode> stack = new Stack<>();
 
@@ -51,6 +52,73 @@ public class TraverseWithoutRecursion {
                 }
             }
         } while(root != null || !stack.isEmpty());
+    }
+
+    public static void inOrderTraversal2(TreeNode root) {
+
+        Stack<TreeNode> stack = new Stack<>();
+        while (Objects.nonNull(root) || !stack.isEmpty()) {
+
+            while(Objects.nonNull(root)) {
+                stack.add(root);
+                root = root.getLeft();
+            }
+
+            TreeNode popped = stack.pop();
+            System.out.print("\t" + popped.getData() + "\t|");
+            root = popped.getRight();
+        }
+    }
+
+    /**
+     * https://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion-and-without-stack/
+     * This is Morris Traversal.
+     *
+     * Algo:-
+     * Step 0: Initialize current as root
+     * Step 1: While current is not null
+     * Step 2: Check if left of current is null or not
+     * Step 3: If it is null
+     *          1. Print current
+     *          2. Set current by right of the current
+     * Step 4: If it is not null
+     *          1. Get prev as left of current.
+     *          2. Go to the right most child of prev OR to the child whose right is equals to current.
+     *              a. If it is right most child then set its right as current
+     *              b. Set current as left of current.
+     *          3. If prev has right as current node then
+     *              a. Set right of current as null
+     *              b. Print current's data
+     *              c. set current as right of the current.
+     *
+     * @param root
+     */
+    public static void inOrderTraversal3(TreeNode root) {
+
+        TreeNode current = root;
+
+        while(Objects.nonNull(current)) {
+
+            if(Objects.isNull(current.getLeft())) {
+                System.out.print("\t" + current.getData() + "\t|");
+                current = current.getRight();
+            } else {
+
+                TreeNode pre = current.getLeft();
+                while(Objects.nonNull(pre.getRight()) && pre.getRight() != current) {
+                    pre = pre.getRight();
+                }
+
+                if(Objects.isNull(pre.getRight())) {
+                    pre.setRight(current);
+                    current = current.getLeft();
+                } else {
+                    pre.setRight(null);
+                    System.out.print("\t" + current.getData() + "\t|");
+                    current = current.getRight();
+                }
+            }
+        }
     }
 
     /**

@@ -12,7 +12,7 @@ public class ConvertBSTtoGreatestSumBST {
         TreeNode root = DSUtils.getBST().getRoot();
         convert(root);
 
-        TraverseWithoutRecursion.inOrderTraversal(root);
+        TraverseWithoutRecursion.inOrderTraversal1(root);
     }
 
     public static void convert(TreeNode root) {
