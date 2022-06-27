@@ -7,6 +7,7 @@ import utils.DSUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Stack;
 
 /**
@@ -31,6 +32,40 @@ public class PathOfNode {
         Stack<TreeNode> stack = getPath(tree.getRoot(), data);
         while(!stack.isEmpty())
             System.out.println(stack.pop().getData());
+
+        stack = new Stack<>();
+        System.out.println("\n");
+        boolean present = getPath(tree.getRoot(), stack, data);
+        if(present) {
+            while(!stack.isEmpty())
+                System.out.println(stack.pop().getData());
+        }
+    }
+
+    public static boolean getPath(TreeNode root, Stack<TreeNode> path, int data) {
+
+        // If root is null means data is not available on that particular path. So return false from here.
+        if(Objects.isNull(root)) {
+            return false;
+        }
+
+        // Insert root in stack.
+        path.push(root);
+
+        // Return true as soon as data is found.
+        if(root.getData() == data) {
+            return true;
+        }
+
+        // Traverse left and right. This will terminate itself once it gets true from any side.
+        if(getPath(root.getLeft(), path, data) || getPath(root.getRight(), path, data)) {
+            return true;
+        }
+
+        // If contort reached here, it means current top element is not in the path. So pop it out and return false.
+        path.pop();
+
+        return false;
     }
 
     public static Stack<TreeNode> getPath(TreeNode root, int data) {
@@ -41,7 +76,7 @@ public class PathOfNode {
         return stack;
     }
 
-    private static Stack<TreeNode> findPath(int data, Stack<TreeNode> stack) {
+    private static void findPath(int data, Stack<TreeNode> stack) {
 
         List<TreeNode> list = new ArrayList<>();
         while(!stack.isEmpty()) {
@@ -61,6 +96,5 @@ public class PathOfNode {
                 }
             }
         }
-        return stack;
     }
 }

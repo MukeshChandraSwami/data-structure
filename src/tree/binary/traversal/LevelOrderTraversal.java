@@ -5,6 +5,7 @@ import tree.binary.common.TreeNode;
 import utils.DSUtils;
 
 import java.util.LinkedList;
+import java.util.Objects;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -22,6 +23,9 @@ public class LevelOrderTraversal {
 
         System.out.println("\n\nLevel order traversal line by line 1 : ");
         printLevelOrderLineByLine1(tree.getRoot());
+
+        System.out.println("\n\nLevel order traversal line by line 2 : ");
+        printLevelOrderLineByLine2(tree.getRoot());
 
         System.out.print("\n\nReverse level order traversal : ");
         reverseLevelOrderTraversalViaStackAndQueue(tree.getRoot());
@@ -124,6 +128,28 @@ public class LevelOrderTraversal {
                     queue1.add(popped.getRight());
             }
             System.out.println();
+        }
+    }
+
+    public static void printLevelOrderLineByLine2(TreeNode node) {
+
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(node);
+        q.add(null);
+
+        while(!q.isEmpty()) {
+
+            TreeNode popped = q.remove();
+            if(Objects.isNull(popped) && !q.isEmpty()) {
+                System.out.println();
+                q.add(null);
+            } else if(Objects.nonNull(popped)){
+                System.out.print("\t" + popped.getData());
+                if(Objects.nonNull(popped.getLeft()))
+                    q.add(popped.getLeft());
+                if(Objects.nonNull(popped.getRight()))
+                    q.add(popped.getRight());
+            }
         }
     }
 
